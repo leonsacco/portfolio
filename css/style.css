@@ -1,0 +1,342 @@
+/* =========================================================
+   Tokens
+========================================================= */
+:root {
+  --bg: #0D0F12;
+  --surface: #14171B;
+  --text: #ECE7DE;
+  --text-muted: #9B9690;
+  --accent-gold: #C9A66B;
+  --accent-sea: #3E6B76;
+  --line: rgba(236, 231, 222, 0.12);
+
+  --font-display: "Fraunces", serif;
+  --font-body: "Inter", sans-serif;
+
+  --max-width: 760px;
+  --space-xl: clamp(4rem, 10vw, 8rem);
+  --space-lg: clamp(2.5rem, 6vw, 4rem);
+}
+
+/* =========================================================
+   Reset
+========================================================= */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation: none !important; transition: none !important; }
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent-gold);
+  outline-offset: 3px;
+}
+
+ul { list-style: none; }
+
+section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-lg) 1.5rem;
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  color: var(--accent-gold);
+}
+
+#selectedWork {
+  margin-bottom: 0;
+}
+
+/* =========================================================
+   Header / Nav
+========================================================= */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(13, 15, 18, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__mark {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+.nav__links {
+  display: flex;
+  gap: 1.75rem;
+}
+
+.nav__links a {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.nav__links a:hover {
+  color: var(--accent-gold);
+}
+
+/* =========================================================
+   Hero
+========================================================= */
+.hero {
+  position: relative;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-xl) 1.5rem;
+  min-height: 78vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero__horizon {
+  display: none;
+}
+
+.hero__horizon line {
+  stroke: url(#none);
+  stroke: var(--accent-sea);
+  stroke-width: 1;
+  opacity: 0.35;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero__name {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(3rem, 10vw, 5.5rem);
+  line-height: 1;
+  margin: 0.75rem 0 1.5rem;
+}
+
+.hero__tagline {
+  max-width: 42ch;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin-bottom: 2.25rem;
+}
+
+.hero__cta {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--accent-gold);
+  border-bottom: 1px solid var(--accent-gold);
+  padding-bottom: 2px;
+  transition: opacity 0.2s ease;
+}
+
+.hero__cta:hover {
+  opacity: 0.75;
+}
+
+/* =========================================================
+   Work
+========================================================= */
+.work {
+  border-top: 1px solid var(--line);
+}
+
+.project {
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.work .project:first-child {
+  padding-top: 0;
+}
+
+.project:last-child {
+  border-bottom: none;
+}
+
+.project__meta {
+  margin-bottom: 0.5rem;
+}
+
+.project__title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.project__desc {
+  color: var(--text-muted);
+  max-width: 58ch;
+  margin-bottom: 1rem;
+}
+
+.project__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.project__tags span {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
+}
+
+.project__pdf {
+  margin: 1rem 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.project__pdf iframe {
+  width: 100%;
+  height: 500px;
+  border: none;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .project__pdf iframe {
+    height: 320px;
+  }
+}
+
+.project__link {
+  font-size: 0.85rem;
+  color: var(--accent-sea);
+  transition: color 0.2s ease;
+}
+
+.project__link:hover {
+  color: var(--accent-gold);
+}
+
+/* =========================================================
+   About
+========================================================= */
+.about {
+  border-top: 1px solid var(--line);
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 3rem;
+}
+
+.about__bio {
+  color: var(--text-muted);
+}
+
+.about__skills ul {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.about__skills li {
+  font-size: 0.9rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+@media (max-width: 600px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   Contact
+========================================================= */
+.contact {
+  border-top: 1px solid var(--line);
+  text-align: left;
+}
+
+.contact__line {
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  max-width: 46ch;
+}
+
+.contact__links {
+  display: flex;
+  gap: 1.75rem;
+}
+
+.contact__links a {
+  font-size: 0.9rem;
+  color: var(--accent-gold);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.contact__links a:hover {
+  border-color: var(--accent-gold);
+}
+
+/* =========================================================
+   Footer
+========================================================= */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.site-footer p {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
