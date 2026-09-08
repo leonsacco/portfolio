@@ -271,12 +271,12 @@ section {
 
 .project__link {
   font-size: 0.85rem;
-  color: var(--accent-sea);
+  color: var(--accent-gold);
   transition: color 0.2s ease;
 }
 
 .project__link:hover {
-  color: var(--accent-gold);
+  font-weight: bold;
 }
 
 /* =========================================================
