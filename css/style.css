@@ -122,6 +122,10 @@ section {
 /* =========================================================
    Hero
 ========================================================= */
+#top {
+  scroll-margin-top: 50px;
+}
+
 .hero {
   position: relative;
   max-width: var(--max-width);
