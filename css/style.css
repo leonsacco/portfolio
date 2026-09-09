@@ -88,20 +88,33 @@ section {
   border-bottom: 1px solid var(--line);
 }
 
-.nav {
+/*.nav {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 1.1rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}*/
+
+.nav {
+  max-width: 900px; /* was var(--max-width), 760px — widen it */
+  margin: 0 auto;
+  padding: 1.5rem 2rem; /* was 1.1rem 1.5rem — more breathing room */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.nav__mark {
+/*.nav__mark {
   font-family: var(--font-display);
   font-style: italic;
   font-size: 1.1rem;
   color: var(--text);
+}*/
+
+.nav__mark {
+  font-size: 1.3rem; /* was 1.1rem */
 }
 
 .nav__links {
@@ -127,8 +140,8 @@ section {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: var(--space-xl) 1.5rem;
-  min-height: 100vh;
-  min-height: 100dvh;
+  min-height: calc(100vh - 73px);
+  min-height: calc(100dvh - 73px);
   display: flex;
   align-items: center;
   overflow: hidden;
