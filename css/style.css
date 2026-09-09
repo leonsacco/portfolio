@@ -127,7 +127,8 @@ section {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: var(--space-xl) 1.5rem;
-  min-height: 78vh;
+  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   overflow: hidden;
