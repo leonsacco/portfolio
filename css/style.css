@@ -164,7 +164,6 @@ section {
 }
 
 .hero__tagline {
-  max-width: 42ch;
   color: var(--text-muted);
   font-size: 1.05rem;
   margin-bottom: 2.25rem;
