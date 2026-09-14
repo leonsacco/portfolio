@@ -150,5 +150,18 @@
     <p>© 2026 Leon Sacco. Built with HTML & CSS.</p>
   </footer>
 
+  <script>
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  
+    if (!prefersReducedMotion) {
+      const lenis = new Lenis({ duration: 1.2 });
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+    }
+  </script>
+
 </body>
 </html>
