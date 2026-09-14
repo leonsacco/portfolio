@@ -154,7 +154,10 @@
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   
     if (!prefersReducedMotion) {
-      const lenis = new Lenis({ duration: 1.2 });
+      const lenis = new Lenis({
+        duration: 1.1,
+        easing: (t) => 1 - Math.pow(1 - t, 3), // smoother ease-out cubic
+      });
       function raf(time) {
         lenis.raf(time);
         requestAnimationFrame(raf);
